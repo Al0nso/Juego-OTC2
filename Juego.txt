@@ -1,0 +1,609 @@
+/***:
+*Programa: /Breaking Code/
+*Autor: Medina Amayo D. Alonso
+*Fecha: 23/01/17
+*Descripcion: Juego
+***/
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Random;
+
+import javax.swing.*;
+
+
+public class Juego extends JFrame implements ActionListener {
+    
+    public static int z=3;
+    private JLabel eb,e1,e2,e3,e4,e5,e6,e9,pr,tb,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13,t14,t15,t16,t17,t18,t19,t20,t21,t22,t23,t24,t25,t26,t27,t28,t29,t30,t31,t32,t33,t34,t35,t36,t37,t38,t39,t40,t41,t42,t43,t44,Ti;
+    private JButton bc,ex,b1,gn,b2,b3,b4,b5,b6,b7,b8,b9,b10;
+    private Random el;
+    public static void main(String[] args)
+    {
+        Juego enc = new Juego();
+        enc.setSize(1366,740);
+        enc.encGUI();
+        enc.setVisible(true);
+    }
+    public void encGUI () {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        Container ventana = getContentPane();
+        ventana.setBackground(Color.BLACK);
+        ventana.setLayout(null);
+        int x,s;
+        double b;
+        int y=20;
+        int z=5;
+        for (x=0;x<=9;x++){
+            eb = new JLabel();
+            eb.setFont(new Font("Consolas", Font.PLAIN, y));
+            if(x==0)
+            {
+                eb.setBounds(50, 25, 150, 20);
+            }
+            else
+            {
+                eb.setBounds(50, 25+(x*25), 150,20);
+                eb.setText("00xF47"+ x);
+                eb.setForeground(Color.GREEN);
+                ventana.add(eb);
+            }
+        }
+        for (x=0;x<=9;x++){
+            e1 = new JLabel();
+            e1.setFont(new Font("Consolas", Font.PLAIN, y));
+            if(x==0)
+            {
+                e1.setBounds(50, 275, 150, 20);
+            }
+            else
+            {
+                e1.setBounds(50, 275+(x*25), 150,20);
+                e1.setText("00xF48"+ x );
+                e1.setForeground(Color.GREEN);
+                ventana.add(e1);
+            }
+        }
+        
+        //Fin de la primera columna*****************************************************
+        
+        for (x=0;x<=9;x++){
+            e2 = new JLabel();
+            e2.setFont(new Font("Consolas", Font.PLAIN, y));
+            if(x==0)
+            {
+                e2.setBounds(425, 25, 150, 20);
+            }
+            else
+            {
+                e2.setBounds(425, 25+(x*25), 150,20);
+                e2.setText("00xF47"+ x);
+                e2.setForeground(Color.GREEN);
+                e2.setText("00xFA4"+ x);
+                e2.setForeground(Color.GREEN);
+                ventana.add(e2);
+            }
+    }
+        for (x=0;x<=9;x++){
+            e3 = new JLabel();
+            e3.setFont(new Font("Consolas", Font.PLAIN, y));
+            if(x==0)
+            {
+                e3.setBounds(425, 275, 150, 20);
+            }
+            else
+            {
+                e3.setBounds(425, 275+(x*25), 150,20);
+                e3.setText("00xF47"+ x);
+                e3.setForeground(Color.GREEN);
+                e3.setText("00xFA5"+ x);
+                e3.setForeground(Color.GREEN);
+                ventana.add(e3);
+            }    
+        }
+        
+        //Fin de la segunda*****************************************************
+        
+        for (x=0;x<=9;x++){
+            e4 = new JLabel();
+            e4.setFont(new Font("Consolas", Font.PLAIN, y));
+            if(x==0)
+            {
+                e4.setBounds(850, 25, 150, 20);
+            }
+            else
+            {
+                e4.setBounds(850, 25+(x*25), 150,20);
+                e4.setText("00xF47"+ x);
+                e4.setForeground(Color.GREEN);
+                e4.setText("00xFG1"+ x);
+                e4.setForeground(Color.GREEN);
+                ventana.add(e4);
+            }
+        }
+        for (x=0;x<=9;x++){
+            e5 = new JLabel();
+            e5.setFont(new Font("Consolas", Font.PLAIN, y));
+            if(x==0)
+            {
+                e5.setBounds(850, 275, 150, 20);
+            }
+            else
+            {
+                e5.setBounds(850, 275+(x*25), 150,20);
+                e5.setText("00xF47"+ x);
+                e5.setForeground(Color.GREEN);
+                e5.setText("00xFG2"+ x);
+                e5.setForeground(Color.GREEN);
+                ventana.add(e5);
+            }    
+        }
+        
+        //Fin de la tercera *****************************************************
+        
+        e6 = new JLabel();
+        e6.setFont(new Font("Consolas", Font.PLAIN, y));
+        e6.setLayout(null);
+        e6.setBounds(50,550,140,20);
+        e6.setText("Vidas:");
+        e6.setForeground(Color.GREEN);
+        ventana.add(e6);
+    
+        e9 = new JLabel();
+        e9.setFont(new Font("Consolas", Font.PLAIN, y));
+        e9.setLayout(null);
+        e9.setBounds(120,550,200,20);
+        e9.setText(""+ z);
+        e9.setForeground(Color.GREEN);
+        ventana.add(e9);
+        
+        //Vidas***********************************       
+        
+        bc = new JButton("Instrucciones");
+        bc.setBounds(1200, 600, 120, 20);
+        ventana.add(bc);
+        bc.addActionListener(this);
+        
+        //Instrucciones****************************
+        
+        b2 = new JButton("HOLE");
+        b2.setBounds(200, 50, 120, 20);
+        ventana.add(b2);
+        b2.addActionListener(this);
+        
+        b1 = new JButton("LIFE");
+        b1.setBounds(530, 325, 120, 20);
+        ventana.add(b1);
+        b1.addActionListener(this);
+        
+        b3 = new JButton("WERE");
+        b3.setBounds(200, 500, 120, 20);
+        ventana.add(b3);
+        b3.addActionListener(this);
+        
+        b4 = new JButton("HOLD");
+        b4.setBounds(530, 175, 120, 20);
+        ventana.add(b4);
+        b4.addActionListener(this);
+        
+        b6 = new JButton("GONE");
+        b6.setBounds(530, 500, 120, 20);
+        ventana.add(b6);
+        b6.addActionListener(this);
+        
+        b7 = new JButton("LAST");
+        b7.setBounds(200, 450, 120, 20);
+        ventana.add(b7);
+        b7.addActionListener(this);
+        
+        b8 = new JButton("SHOW");
+        b8.setBounds(1000, 175, 120, 20);
+        ventana.add(b8);
+        b8.addActionListener(this);
+   
+        
+        b9 = new JButton("FEEL");
+        b9.setBounds(1000, 500, 120, 20);
+        ventana.add(b9);
+        b9.addActionListener(this);
+        b9.setBorder(null);
+        
+        b10 = new JButton("HARD");
+        b10.setBounds(200, 300, 120, 20);
+        ventana.add(b10);
+        b10.addActionListener(this);
+       
+        
+        //Palabras incorrectas****************
+        
+        b5 = new JButton("LINE");
+        b5.setBounds(1000, 225, 120, 20);
+        ventana.add(b5);
+        b5.addActionListener(this);
+        
+        //Password****************************
+        
+        ex = new JButton("Salir");
+        ex.setBounds(1200, 650, 120, 20);
+        ventana.add(ex);
+        ex.addActionListener(this);
+        
+        //Salir*******************************
+        
+        tb = new JLabel();
+        tb.setFont(new Font("Consolas", Font.PLAIN, y));
+        tb.setBounds(950,50,300,20);
+        tb.setText("sdfsgfdg/dfhge4t$%Jd");
+        tb.setForeground(Color.GREEN);
+        ventana.add(tb);
+        
+        t1 = new JLabel();
+        t1.setFont(new Font("Consolas", Font.PLAIN, y));
+        t1.setBounds(200,75,300,20);
+        t1.setText("hjhsadhsdkhf$fg(sd");
+        t1.setForeground(Color.GREEN);
+        ventana.add(t1);
+        
+        t2 = new JLabel();
+        t2.setFont(new Font("Consolas", Font.PLAIN, y));
+        t2.setBounds(200,100,300,20);
+        t2.setText("KLW6vhgfhg%mhv885H");
+        t2.setForeground(Color.GREEN);
+        ventana.add(t2);
+        
+        t3 = new JLabel();
+        t3.setFont(new Font("Consolas", Font.PLAIN, y));
+        t3.setBounds(200,125,300,20);
+    t3.setText("bhjbhjK/&%gfvhkg67" );
+        t3.setForeground(Color.GREEN);
+        ventana.add(t3);
+        
+        t4 = new JLabel();
+        t4.setFont(new Font("Consolas", Font.PLAIN, y));
+        t4.setBounds(200,150,300,20);
+    t4.setText("FGHF7ttt&RI&/T7hjg" );
+        t4.setForeground(Color.GREEN);
+        ventana.add(t4);
+        
+        t5 = new JLabel();
+        t5.setFont(new Font("Consolas", Font.PLAIN, y));
+        t5.setBounds(200,175,300,20);
+    t5.setText("hjghfhjTRU6u6f%E$E" );
+        t5.setForeground(Color.GREEN);
+        ventana.add(t5);
+        
+        t6 = new JLabel();
+        t6.setFont(new Font("Consolas", Font.PLAIN, y));
+        t6.setBounds(200,200,300,20);
+    t6.setText("gykgjgmhg#&%/&%/&F" );
+        t6.setForeground(Color.GREEN);
+        ventana.add(t6);
+        
+        t7 = new JLabel();
+        t7.setFont(new Font("Consolas", Font.PLAIN, y));
+        t7.setBounds(200,225,300,20);
+    t7.setText("mbhjedfg%EGFDgdf554" );
+        t7.setForeground(Color.GREEN);
+        ventana.add(t7);
+        
+        t8 = new JLabel();
+        t8.setFont(new Font("Consolas", Font.PLAIN, y));
+        t8.setBounds(200,250,300,20);
+    t8.setText("lkljkk%/&Iygd4e542" );
+        t8.setForeground(Color.GREEN);
+        ventana.add(t8);
+        
+        t9 = new JLabel();
+        t9.setFont(new Font("Consolas", Font.PLAIN, y));
+        t9.setBounds(200,325,300,20);
+    t9.setText("mbxcgfcsfertere675s" );
+        t9.setForeground(Color.GREEN);
+        ventana.add(t9);
+           
+        t10 = new JLabel();
+        t10.setFont(new Font("Consolas", Font.PLAIN, y));
+        t10.setBounds(200,350,300,20);
+    t10.setText("56dvszgdfxh76&76TY" );
+        t10.setForeground(Color.GREEN);
+        ventana.add(t10);
+        
+        t11 = new JLabel();
+        t11.setFont(new Font("Consolas", Font.PLAIN, y));
+        t11.setBounds(200,375,300,20);
+    t11.setText("lkkjklhj74765%$#68" );
+        t11.setForeground(Color.GREEN);
+        ventana.add(t11);
+        
+        t12 = new JLabel();
+        t12.setFont(new Font("Consolas", Font.PLAIN, y));
+        t12.setBounds(200,400,300,20);
+    t12.setText("jhjkhfdshlhw7etr47" );
+        t12.setForeground(Color.GREEN);
+        ventana.add(t12);
+        
+        t13 = new JLabel();
+        t13.setFont(new Font("Consolas", Font.PLAIN, y));
+        t13.setBounds(200,425,300,20);
+    t13.setText("hjghjetgt&%&%66vhj" );
+        t13.setForeground(Color.GREEN);
+        ventana.add(t13);
+        
+        t14 = new JLabel();
+        t14.setFont(new Font("Consolas", Font.PLAIN, y));
+        t14.setBounds(200,475,300,20);
+    t14.setText("asdsayTyyurTYYF%%&/" );
+        t14.setForeground(Color.GREEN);
+        ventana.add(t14);
+   
+    t16 = new JLabel();
+        t16.setFont(new Font("Consolas", Font.PLAIN, y));
+        t16.setBounds(950,75,300,20);
+        t16.setForeground(Color.GREEN);
+        t16.setText("mnb,bvvGy/(&(/68hjhy" );
+        ventana.add(t16);
+        
+        t17 = new JLabel();
+        t17.setFont(new Font("Consolas", Font.PLAIN, y));
+        t17.setBounds(950,100,300,20);
+        t17.setForeground(Color.GREEN);
+        t17.setText("gffdRDR56r5646%&&465" );
+        ventana.add(t17);
+        
+        t18 = new JLabel();
+        t18.setFont(new Font("Consolas", Font.PLAIN, y));
+        t18.setBounds(950,125,300,20);
+        t18.setForeground(Color.GREEN);
+        t18.setText("GGHJgRU&gfyuvk242TYF" );
+        ventana.add(t18);
+        
+        t19 = new JLabel();
+        t19.setFont(new Font("Consolas", Font.PLAIN, y));
+        t19.setBounds(950,150,300,20);
+        t19.setForeground(Color.GREEN);
+        t19.setText("JKHG6758ig785bjhbh&%" );
+        ventana.add(t19);
+        
+        t20 = new JLabel();
+        t20.setFont(new Font("Consolas", Font.PLAIN, y));
+        t20.setBounds(950,200,300,20);
+        t20.setForeground(Color.GREEN);
+        t20.setText("&8hbjt76%/&gyug67t6G" );
+        ventana.add(t20);
+        
+        t21 = new JLabel();
+        t21.setFont(new Font("Consolas", Font.PLAIN, y));
+        t21.setBounds(950,250,300,20);
+        t21.setForeground(Color.GREEN);
+        t21.setText("jghgfIU>YUYoy88y7/&7" );
+        ventana.add(t21);
+        
+        t22 = new JLabel();
+        t22.setFont(new Font("Consolas", Font.PLAIN, y));
+        t22.setBounds(950,300,300,20);
+        t22.setForeground(Color.GREEN);
+        t22.setText("hggkjk/&T/i8687t78&(" );
+        ventana.add(t22);
+        
+        t23 = new JLabel();
+        t23.setFont(new Font("Consolas", Font.PLAIN, y));
+        t23.setBounds(950,325,300,20);
+        t23.setForeground(Color.GREEN);
+        t23.setText("(/678bnbj%%$vfytikfF" );
+        ventana.add(t23);
+        
+        t24 = new JLabel();
+        t24.setFont(new Font("Consolas", Font.PLAIN, y));
+        t24.setBounds(950,350,300,20);
+        t24.setForeground(Color.GREEN);
+        t24.setText("jhgfYTR&R67gfyufcgh6&" );
+        ventana.add(t24);
+        
+        t25 = new JLabel();
+        t25.setFont(new Font("Consolas", Font.PLAIN, y));
+        t25.setBounds(950,375,300,20);
+        t25.setForeground(Color.GREEN);
+        t25.setText("hT&/tygbyf57uyghgvgVY" );
+        ventana.add(t25);
+        
+        t26 = new JLabel();
+        t26.setFont(new Font("Consolas", Font.PLAIN, y));
+        t26.setBounds(950,400,300,20);
+        t26.setForeground(Color.GREEN);
+        t26.setText("TYtUT&/t67tgv67o879p8" );
+        ventana.add(t26);
+        
+        t27 = new JLabel();
+        t27.setFont(new Font("Consolas", Font.PLAIN, y));
+        t27.setBounds(950,425,300,20);
+        t27.setForeground(Color.GREEN);
+        t27.setText("ZERye56r65r7g789879798" );
+        ventana.add(t27);
+        
+        t28 = new JLabel();
+        t28.setFont(new Font("Consolas", Font.PLAIN, y));
+        t28.setBounds(950,450,300,20);
+        t28.setForeground(Color.GREEN);
+        t28.setText("FYRTYtrt786yg68786t6vu&" );
+        ventana.add(t28);
+        
+        t29 = new JLabel();
+        t29.setFont(new Font("Consolas", Font.PLAIN, y));
+        t29.setBounds(950,475,300,20);
+        t29.setForeground(Color.GREEN);
+        t29.setText("%&&(6tguygbyvf8o876defg" );
+        ventana.add(t29);
+        
+        t30 = new JLabel();
+        t30.setFont(new Font("Consolas", Font.PLAIN, y));
+        t30.setBounds(525,50,300,20);
+        t30.setText("GHFDGDJHJFtyfyu//%6gcgf");
+        t30.setForeground(Color.GREEN);
+        ventana.add(t30);
+        
+        t31 = new JLabel();
+        t31.setFont(new Font("Consolas", Font.PLAIN, y));
+        t31.setBounds(525,75,300,20);
+        t31.setText("YGtyfvTFRTdy8t87T&/R/R%");
+        t31.setForeground(Color.GREEN);
+        ventana.add(t31);
+        
+        t32 = new JLabel();
+        t32.setFont(new Font("Consolas", Font.PLAIN, y));
+        t32.setBounds(525,100,300,20);
+        t32.setText("gfftyGJGYTTYr76r&/R&/Rh");
+        t32.setForeground(Color.GREEN);
+        ventana.add(t32);
+        
+        t33 = new JLabel();
+        t33.setFont(new Font("Consolas", Font.PLAIN, y));
+        t33.setBounds(525,125,300,20);
+        t33.setText("GYITIT/t7tfyut675556&%&/");
+        t33.setForeground(Color.GREEN);
+        ventana.add(t33);
+        
+        t34 = new JLabel();
+        t34.setFont(new Font("Consolas", Font.PLAIN, y));
+        t34.setBounds(525,150,300,20);
+        t34.setText("hjghTYRTYrfcgf56r56%&$%&");
+        t34.setForeground(Color.GREEN);
+        ventana.add(t34);
+        
+        t35 = new JLabel();
+        t35.setFont(new Font("Consolas", Font.PLAIN, y));
+        t35.setBounds(525,200,300,20);
+        t35.setText("hgFYTtyr66R%&%56fgf%%&%8");
+        t35.setForeground(Color.GREEN);
+        ventana.add(t35);
+        
+        t36 = new JLabel();
+        t36.setFont(new Font("Consolas", Font.PLAIN, y));
+        t36.setBounds(525,225,300,20);
+        t36.setText("ghff%&$%&/vghf6%R%&767/&");
+        t36.setForeground(Color.GREEN);
+        ventana.add(t36);
+        
+        t37 = new JLabel();
+        t37.setFont(new Font("Consolas", Font.PLAIN, y));
+        t37.setBounds(525,250,300,20);
+        t37.setText("hjggff&/%vhgvyugyu&/gfyg");
+        t37.setForeground(Color.GREEN);
+        ventana.add(t37);
+        
+        t38 = new JLabel();
+        t38.setFont(new Font("Consolas", Font.PLAIN, y));
+        t38.setBounds(525,300,300,20);
+        t38.setText("HJGYFGTYfu6rvyuGIF&/tg87");
+        t38.setForeground(Color.GREEN);
+        ventana.add(t38);
+        
+        t38 = new JLabel();
+        t38.setFont(new Font("Consolas", Font.PLAIN, y));
+        t38.setBounds(525,350,300,20);
+        t38.setText("jhgkhTYtykgyu&/T/()o0IL=");
+        t38.setForeground(Color.GREEN);
+        ventana.add(t38);
+        
+        t38 = new JLabel();
+        t38.setFont(new Font("Consolas", Font.PLAIN, y));
+        t38.setBounds(525,375,300,20);
+        t38.setText("HJGktghvhgkv&%RI&v87VYg/");
+        t38.setForeground(Color.GREEN);
+        ventana.add(t38);
+        
+        t40 = new JLabel();
+        t40.setFont(new Font("Consolas", Font.PLAIN, y));
+        t40.setBounds(525,400,300,20);
+        t40.setText("hjgJGYTI&gvhHKFdfrt54T&/%");
+        t40.setForeground(Color.GREEN);
+        ventana.add(t40);
+        
+        t40 = new JLabel();
+        t40.setFont(new Font("Consolas", Font.PLAIN, y));
+        t40.setBounds(525,425,300,20);
+        t40.setText("jghFTYRTYftyFTTs66565%&4¿");
+        t40.setForeground(Color.GREEN);
+        ventana.add(t40);
+        
+        t40 = new JLabel();
+        t40.setFont(new Font("Consolas", Font.PLAIN, y));
+        t40.setBounds(525,450,300,20);
+        t40.setText("JHYGYTFGYTFDD(87677%)%&$4");
+        t40.setForeground(Color.GREEN);
+        ventana.add(t40);
+        
+        t40 = new JLabel();
+        t40.setFont(new Font("Consolas", Font.PLAIN, y));
+        t40.setBounds(525,475,300,20);
+        t40.setText("hjgfFTYFTYFVGVttgvTIY%ff67");
+        t40.setForeground(Color.GREEN);
+        ventana.add(t40);
+        
+        //Texto basura*****************************
+        
+        Ti= new JLabel();
+        Ti.setFont(new Font("Consolas", Font.PLAIN, y));
+        Ti.setBounds(600,15,300,20);
+        Ti.setText("/Breaking Code/");
+        Ti.setForeground(Color.GREEN);
+        ventana.add(Ti);
+    }
+    public void actionPerformed(ActionEvent event) {
+        Object origen = event.getSource();
+        String a;
+        if(origen == bc)
+        {
+            JOptionPane.showMessageDialog(null, "S0y retr0 y estoy aquí para ayudarte"
+            +"\n Nece5ito que tu me ayudes a m1,estas dentr0 del codiGo donde te he logrado colar"
+            +" donde necesito encu3ntres la contraseña \n Me he tomado la libertad de separar las posibles contraseñas");
+            JOptionPane.showMessageDialog(null, ""
+           + "1. Elige una palabra al azar. Según el resultado:\n2a. Si no tiene"
+           + "ninguna letra en común: Busca entre las palabras restantes una que "
+           + "no tenga ninguna letra en la misma posición que la primera palabra."
+           +" Según el resultado.\n3aa. Si no tiene ninguna letra en común: Busca "
+           + "entre las palabras restantes una que no tenga ninguna letra en las "
+           +"mismas posiciones que las dos primeras palabras. Repite hasta que haya"
+           +" una coincidencia. Luego pasa a 2b.\n3ab: Si tiene alguna letra en "
+           +"común: Pasa al paso 2b.\n2b. Si tiene alguna letra en común: Busca "
+           +"entre las palabras restantes una que tenga tantas letras en la misma "
+           +"posición como la palabra en la que ha habido coincidencias. Repetir "
+           + "con lógica.");
+        }
+        else
+            if(origen == ex)
+            {
+                JOptionPane.showMessageDialog(null, "Log out \n"
+                        + "ErrOR 00x456");
+                System.exit(0);
+            }
+        else
+            if(origen == b1 || origen == b2 || origen == b3 || origen == b4 || origen == b6 || origen == b7 || origen == b8 || origen == b9 || origen == b10 )
+                {
+                z=z-1;
+                    if(z>=1)
+                    {
+                        JOptionPane.showMessageDialog(null, "Se estan detecatndo irregularidades en la seguridad");
+                        a = Integer.toString(z);
+                        e9.setText("" + a);
+                        JOptionPane.showMessageDialog(null, "Vidas:" + a);
+                    }
+                    else
+                        if(z==0){
+                            JOptionPane.showMessageDialog(b5,"retr0:Te han detectado");
+                            JOptionPane.showMessageDialog(b10, "Bloqueo de sistema");
+                            JOptionPane.showMessageDialog(e1, "retr0:Te sacare de ahí");
+                            JOptionPane.showMessageDialog(b1, "Log out \n"
+                            + "ErrOR 00x520");  
+                        JOptionPane.showMessageDialog(bc, "Amenaza detectada");
+                        JOptionPane.showMessageDialog(e5, "Rastreo de IP");
+                        JOptionPane.showMessageDialog(b8, "retr0:¡Sal de ahí!");
+                            System.exit(0);
+                        }
+                }
+         else
+         if(origen == b5)
+         {
+         JOptionPane.showMessageDialog(null, "retr0:¡Lo ha5 lograd0!");
+         System.exit(0);
+         }
+        }
+}
